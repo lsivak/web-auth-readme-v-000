@@ -9,7 +9,7 @@ def create
     req.params['redirect_uri'] = "http://67.205.182.198:34348/auth"
     req.params['code'] = params[:code]
   end
- 
+
   body = JSON.parse(resp.body)
   session[:token] = body["access_token"]
   redirect_to root_path
